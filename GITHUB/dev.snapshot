@@ -1,0 +1,730 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "34b4f248-161a-37b5-b12e-43eafd9f64bf",
+            "name" : "Eliminar tweets com text em branco",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "6bb39881-2425-324c-b325-5a7b01470301",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "matched" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "ecfeceac-b7fa-3431-93e9-333b42c65ad1",
+            "name" : "Dar enfase no campo text",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ {
+            "x" : 506.424140364973,
+            "y" : 821.6330427583255
+          }, {
+            "x" : 506.424140364973,
+            "y" : 871.6330427583255
+          } ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "599b3616-c13e-3955-9732-409354bf8e3f",
+            "name" : "Inserir os Tweets no Elasticseatch",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "f10df2ab-a0e1-310c-a3fb-ce29c00e7ad9",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "retry" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "599b3616-c13e-3955-9732-409354bf8e3f",
+            "name" : "Inserir os Tweets no Elasticseatch",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "b10ac2c2-882d-306b-b0f7-067fc3f63d4d",
+            "name" : "Logs dos que não foram inseridos",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "a7302c75-da67-31fb-88e1-e298e6156c08",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "failure" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "599b3616-c13e-3955-9732-409354bf8e3f",
+            "name" : "Inserir os Tweets no Elasticseatch",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "599b3616-c13e-3955-9732-409354bf8e3f",
+            "name" : "Inserir os Tweets no Elasticseatch",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "cc3bfcc6-f67c-3239-8153-dfcb91715fed",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "a7ef5954-9d23-375a-b32e-360b6cc82e8f",
+            "name" : "Pegar só os campos que eu preciso",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "ecfeceac-b7fa-3431-93e9-333b42c65ad1",
+            "name" : "Dar enfase no campo text",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "9d75e5f4-4cb6-3e9d-a8cd-e4891132ee29",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "ce47a729-1075-394f-8a3d-429f8ef351de",
+            "name" : "Pega Tweets por assunto",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "a7ef5954-9d23-375a-b32e-360b6cc82e8f",
+            "name" : "Pegar só os campos que eu preciso",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "805ececf-c92e-36ad-9bdb-32b010d211ee",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "tweet" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "974a2129-68cc-3915-b705-937cc30f68ef",
+            "id" : "34b4f248-161a-37b5-b12e-43eafd9f64bf",
+            "name" : "Eliminar tweets com text em branco",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ ],
+        "funnels" : [ ],
+        "identifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+        "inputPorts" : [ {
+          "allowRemoteAccess" : false,
+          "componentType" : "INPUT_PORT",
+          "concurrentlySchedulableTaskCount" : 1,
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "22334eed-b360-3e54-8882-55c411eb44fa",
+          "name" : "g",
+          "position" : {
+            "x" : -844.5601154061935,
+            "y" : 380.94265798627356
+          },
+          "type" : "INPUT_PORT"
+        } ],
+        "labels" : [ ],
+        "name" : "Registry",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 2176.0,
+          "y" : 896.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ "success" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-elasticsearch-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "599b3616-c13e-3955-9732-409354bf8e3f",
+          "name" : "Inserir os Tweets no Elasticseatch",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 32.0,
+            "y" : 776.0
+          },
+          "properties" : {
+            "elasticsearch-http-response-timeout" : "15 secs",
+            "put-es-type" : "_doc",
+            "put-es-index" : "tweets-${now():format('yyyy-MM-dd')}",
+            "elasticsearch-http-url" : "http://localhost:9200",
+            "put-es-batch-size" : "100",
+            "elasticsearch-http-connect-timeout" : "5 secs",
+            "put-es-index-op" : "index",
+            "Character Set" : "UTF-8"
+          },
+          "propertyDescriptors" : {
+            "elasticsearch-http-response-timeout" : {
+              "displayName" : "Response Timeout",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-response-timeout",
+              "sensitive" : false
+            },
+            "put-es-id-attr" : {
+              "displayName" : "Identifier Attribute",
+              "identifiesControllerService" : false,
+              "name" : "put-es-id-attr",
+              "sensitive" : false
+            },
+            "put-es-type" : {
+              "displayName" : "Type",
+              "identifiesControllerService" : false,
+              "name" : "put-es-type",
+              "sensitive" : false
+            },
+            "put-es-index" : {
+              "displayName" : "Index",
+              "identifiesControllerService" : false,
+              "name" : "put-es-index",
+              "sensitive" : false
+            },
+            "proxy-configuration-service" : {
+              "displayName" : "Proxy Configuration Service",
+              "identifiesControllerService" : true,
+              "name" : "proxy-configuration-service",
+              "sensitive" : false
+            },
+            "elasticsearch-http-url" : {
+              "displayName" : "Elasticsearch URL",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-url",
+              "sensitive" : false
+            },
+            "put-es-batch-size" : {
+              "displayName" : "Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "put-es-batch-size",
+              "sensitive" : false
+            },
+            "SSL Context Service" : {
+              "displayName" : "SSL Context Service",
+              "identifiesControllerService" : true,
+              "name" : "SSL Context Service",
+              "sensitive" : false
+            },
+            "elasticsearch-http-connect-timeout" : {
+              "displayName" : "Connection Timeout",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-connect-timeout",
+              "sensitive" : false
+            },
+            "Username" : {
+              "displayName" : "Username",
+              "identifiesControllerService" : false,
+              "name" : "Username",
+              "sensitive" : false
+            },
+            "put-es-index-op" : {
+              "displayName" : "Index Operation",
+              "identifiesControllerService" : false,
+              "name" : "put-es-index-op",
+              "sensitive" : false
+            },
+            "elasticsearch-http-proxy-host" : {
+              "displayName" : "Proxy Host",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-proxy-host",
+              "sensitive" : false
+            },
+            "proxy-username" : {
+              "displayName" : "Proxy Username",
+              "identifiesControllerService" : false,
+              "name" : "proxy-username",
+              "sensitive" : false
+            },
+            "proxy-password" : {
+              "displayName" : "Proxy Password",
+              "identifiesControllerService" : false,
+              "name" : "proxy-password",
+              "sensitive" : true
+            },
+            "elasticsearch-http-proxy-port" : {
+              "displayName" : "Proxy Port",
+              "identifiesControllerService" : false,
+              "name" : "elasticsearch-http-proxy-port",
+              "sensitive" : false
+            },
+            "Character Set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "Character Set",
+              "sensitive" : false
+            },
+            "Password" : {
+              "displayName" : "Password",
+              "identifiesControllerService" : false,
+              "name" : "Password",
+              "sensitive" : true
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchHttp",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-social-media-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "ce47a729-1075-394f-8a3d-429f8ef351de",
+          "name" : "Pega Tweets por assunto",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : -576.0,
+            "y" : 208.0
+          },
+          "properties" : {
+            "max-client-error-retries" : "5",
+            "Twitter Endpoint" : "Filter Endpoint",
+            "Terms to Filter On" : "Bolsonaro"
+          },
+          "propertyDescriptors" : {
+            "Consumer Key" : {
+              "displayName" : "Consumer Key",
+              "identifiesControllerService" : false,
+              "name" : "Consumer Key",
+              "sensitive" : true
+            },
+            "Consumer Secret" : {
+              "displayName" : "Consumer Secret",
+              "identifiesControllerService" : false,
+              "name" : "Consumer Secret",
+              "sensitive" : true
+            },
+            "Access Token" : {
+              "displayName" : "Access Token",
+              "identifiesControllerService" : false,
+              "name" : "Access Token",
+              "sensitive" : true
+            },
+            "max-client-error-retries" : {
+              "displayName" : "Max Client Error Retries",
+              "identifiesControllerService" : false,
+              "name" : "max-client-error-retries",
+              "sensitive" : false
+            },
+            "Languages" : {
+              "displayName" : "Languages",
+              "identifiesControllerService" : false,
+              "name" : "Languages",
+              "sensitive" : false
+            },
+            "IDs to Follow" : {
+              "displayName" : "IDs to Follow",
+              "identifiesControllerService" : false,
+              "name" : "IDs to Follow",
+              "sensitive" : false
+            },
+            "Twitter Endpoint" : {
+              "displayName" : "Twitter Endpoint",
+              "identifiesControllerService" : false,
+              "name" : "Twitter Endpoint",
+              "sensitive" : false
+            },
+            "Locations to Filter On" : {
+              "displayName" : "Locations to Filter On",
+              "identifiesControllerService" : false,
+              "name" : "Locations to Filter On",
+              "sensitive" : false
+            },
+            "Terms to Filter On" : {
+              "displayName" : "Terms to Filter On",
+              "identifiesControllerService" : false,
+              "name" : "Terms to Filter On",
+              "sensitive" : false
+            },
+            "Access Token Secret" : {
+              "displayName" : "Access Token Secret",
+              "identifiesControllerService" : false,
+              "name" : "Access Token Secret",
+              "sensitive" : true
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.twitter.GetTwitter",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "a7ef5954-9d23-375a-b32e-360b6cc82e8f",
+          "name" : "Pegar só os campos que eu preciso",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 32.0,
+            "y" : 512.0
+          },
+          "properties" : {
+            "jolt-spec" : "[\n  {\n    \"operation\": \"shift\",\n    \"spec\": {\n      \"created_at\": \"created_at\",\n      \"time_zone\": \"time_zone\",\n      \"utc_offset\": \"utc_offset\",\n      \"timestamp_ms\": \"timestamp_ms\",\n      \"id_str\": \"id_str\",\n      \"text\": \"text\",\n      \"source\": \"source\",\n      \"favorited\": \"favorited\",\n      \"retweeted\": \"retweeted\",\n      \"possibly_sensitive\": \"possibly_sensitive\",\n      \"lang\": \"lang\",\n      \"user\": {\n        \"id_str\": \"user_id_str\",\n        \"name\": \"user_name\",\n        \"screen_name\": \"user_screen_name\",\n        \"description\": \"user_description\",\n        \"verified\": \"user_verified\",\n        \"followers_count\": \"users_followers_count\",\n        \"friends_count\": \"users_friends_count\",\n        \"listed_count\": \"users_listed_count\",\n        \"favourites_count\": \"user_favourites_count\",\n        \"created_at\": \"user_created_at\",\n        \"lang\": \"user_lang\"\n      }\n    }\n  }\n]\n",
+            "jolt-transform" : "jolt-transform-chain",
+            "pretty_print" : "false",
+            "Transform Cache Size" : "1"
+          },
+          "propertyDescriptors" : {
+            "jolt-spec" : {
+              "displayName" : "Jolt Specification",
+              "identifiesControllerService" : false,
+              "name" : "jolt-spec",
+              "sensitive" : false
+            },
+            "jolt-transform" : {
+              "displayName" : "Jolt Transformation DSL",
+              "identifiesControllerService" : false,
+              "name" : "jolt-transform",
+              "sensitive" : false
+            },
+            "jolt-custom-class" : {
+              "displayName" : "Custom Transformation Class Name",
+              "identifiesControllerService" : false,
+              "name" : "jolt-custom-class",
+              "sensitive" : false
+            },
+            "jolt-custom-modules" : {
+              "displayName" : "Custom Module Directory",
+              "identifiesControllerService" : false,
+              "name" : "jolt-custom-modules",
+              "sensitive" : false
+            },
+            "pretty_print" : {
+              "displayName" : "Pretty Print",
+              "identifiesControllerService" : false,
+              "name" : "pretty_print",
+              "sensitive" : false
+            },
+            "Transform Cache Size" : {
+              "displayName" : "Transform Cache Size",
+              "identifiesControllerService" : false,
+              "name" : "Transform Cache Size",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.JoltTransformJSON",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure", "unmatched" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "ecfeceac-b7fa-3431-93e9-333b42c65ad1",
+          "name" : "Dar enfase no campo text",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : -576.0,
+            "y" : 496.0
+          },
+          "properties" : {
+            "Destination" : "flowfile-attribute",
+            "Return Type" : "auto-detect",
+            "Null Value Representation" : "empty string",
+            "twitter.text" : "$.text",
+            "Path Not Found Behavior" : "ignore"
+          },
+          "propertyDescriptors" : {
+            "Destination" : {
+              "displayName" : "Destination",
+              "identifiesControllerService" : false,
+              "name" : "Destination",
+              "sensitive" : false
+            },
+            "Return Type" : {
+              "displayName" : "Return Type",
+              "identifiesControllerService" : false,
+              "name" : "Return Type",
+              "sensitive" : false
+            },
+            "Null Value Representation" : {
+              "displayName" : "Null Value Representation",
+              "identifiesControllerService" : false,
+              "name" : "Null Value Representation",
+              "sensitive" : false
+            },
+            "twitter.text" : {
+              "displayName" : "twitter.text",
+              "identifiesControllerService" : false,
+              "name" : "twitter.text",
+              "sensitive" : false
+            },
+            "Path Not Found Behavior" : {
+              "displayName" : "Path Not Found Behavior",
+              "identifiesControllerService" : false,
+              "name" : "Path Not Found Behavior",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "unmatched" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "34b4f248-161a-37b5-b12e-43eafd9f64bf",
+          "name" : "Eliminar tweets com text em branco",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : -584.0,
+            "y" : 776.0
+          },
+          "properties" : {
+            "Routing Strategy" : "Route to Property name",
+            "tweet" : "${twitter.text:isEmpty():not()}"
+          },
+          "propertyDescriptors" : {
+            "Routing Strategy" : {
+              "displayName" : "Routing Strategy",
+              "identifiesControllerService" : false,
+              "name" : "Routing Strategy",
+              "sensitive" : false
+            },
+            "tweet" : {
+              "displayName" : "tweet",
+              "identifiesControllerService" : false,
+              "name" : "tweet",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "success" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "1.11.1"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "974a2129-68cc-3915-b705-937cc30f68ef",
+          "identifier" : "b10ac2c2-882d-306b-b0f7-067fc3f63d4d",
+          "name" : "Logs dos que não foram inseridos",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 40.0,
+            "y" : 984.0
+          },
+          "properties" : {
+            "character-set" : "UTF-8",
+            "Log Level" : "info",
+            "attributes-to-log-regex" : ".*",
+            "Log Payload" : "false"
+          },
+          "propertyDescriptors" : {
+            "Log prefix" : {
+              "displayName" : "Log prefix",
+              "identifiesControllerService" : false,
+              "name" : "Log prefix",
+              "sensitive" : false
+            },
+            "character-set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "character-set",
+              "sensitive" : false
+            },
+            "Log Level" : {
+              "displayName" : "Log Level",
+              "identifiesControllerService" : false,
+              "name" : "Log Level",
+              "sensitive" : false
+            },
+            "attributes-to-ignore-regex" : {
+              "displayName" : "Attributes to Ignore by Regular Expression",
+              "identifiesControllerService" : false,
+              "name" : "attributes-to-ignore-regex",
+              "sensitive" : false
+            },
+            "Attributes to Ignore" : {
+              "displayName" : "Attributes to Ignore",
+              "identifiesControllerService" : false,
+              "name" : "Attributes to Ignore",
+              "sensitive" : false
+            },
+            "Attributes to Log" : {
+              "displayName" : "Attributes to Log",
+              "identifiesControllerService" : false,
+              "name" : "Attributes to Log",
+              "sensitive" : false
+            },
+            "attributes-to-log-regex" : {
+              "displayName" : "Attributes to Log by Regular Expression",
+              "identifiesControllerService" : false,
+              "name" : "attributes-to-log-regex",
+              "sensitive" : false
+            },
+            "Log Payload" : {
+              "displayName" : "Log Payload",
+              "identifiesControllerService" : false,
+              "name" : "Log Payload",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.LogAttribute",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { }
+    }
+  }
+}
